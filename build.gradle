@@ -76,17 +76,6 @@ protobuf {
             }
         }
     }
-    
-    generatedFilesBaseDir = "$buildDir/generated/source/proto"
-}
-
-tasks.named('generateProto').configure {
-    dependsOn 'extractIncludeProto'
-    dependsOn 'extractProto'
-}
-
-tasks.named('compileJava').configure {
-    dependsOn 'generateProto'
 }
 
 tasks.named('test') {
