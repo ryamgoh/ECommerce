@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.ryam.ecommerce.internal.proto;
+
+option java_package = "com.ryam.ecommerce.internal.proto";
+
+service HelloService {
+  rpc SayHello (HelloRequest) returns (HelloResponse) {}
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}
