@@ -13,9 +13,9 @@ public class HelloService extends HelloServiceGrpc.HelloServiceImplBase {
     public void sayHello(HelloRequest request, StreamObserver<HelloResponse> responseObserver) {
         String greeting = "Hello, " + request.getName() + "!";
 
-        HelloResponse response = HelloResponse.newBuilder()
-                .setMessage(greeting)
-                .build();
+        HelloResponse response = HelloResponse.newBuilder().
+                setMessage(greeting).
+                build();
 
         responseObserver.onNext(response);
         responseObserver.onCompleted();
