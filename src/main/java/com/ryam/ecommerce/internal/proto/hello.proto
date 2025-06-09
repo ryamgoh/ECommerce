@@ -3,6 +3,7 @@ syntax = "proto3";
 package com.ryam.ecommerce.internal.proto;
 
 option java_package = "com.ryam.ecommerce.internal.proto";
+option java_outer_classname = "Hello";
 
 service HelloService {
   rpc SayHello (HelloRequest) returns (HelloResponse) {}
