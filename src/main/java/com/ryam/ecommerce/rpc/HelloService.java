@@ -6,18 +6,21 @@ import com.ryam.ecommerce.internal.proto.HelloServiceGrpc;
 import io.grpc.stub.StreamObserver;
 import org.springframework.grpc.server.service.GrpcService;
 
+/**
+ * This is a hello world server that implements the HelloService interface.
+ */
 @GrpcService
 public class HelloService extends HelloServiceGrpc.HelloServiceImplBase {
 
-    @Override
-    public void sayHello(HelloRequest request, StreamObserver<HelloResponse> responseObserver) {
-        String greeting = "Hello, " + request.getName() + "!";
+  @Override
+  public void sayHello(HelloRequest request, StreamObserver<HelloResponse> responseObserver) {
+    String greeting = "Hello, " + request.getName() + "!";
 
-        HelloResponse response = HelloResponse.newBuilder().
-                setMessage(greeting).
-                build();
+    HelloResponse response = HelloResponse.newBuilder()
+        .setMessage(greeting)
+        .build();
 
-        responseObserver.onNext(response);
-        responseObserver.onCompleted();
-    }
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+  }
 }
